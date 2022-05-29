@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>miperfil Admin</title>
+</head>
+<body>
+    <header><h1>Mi perfil admin</h1></header>
+
+    <style type="text/css">
+        a:link, a:visited, a:active {
+            text-decoration:none;
+        }
+    </style> 
+    <br>
+
+<h2>Ver datos</h2>
+<form action="ServletForm" method="post" class="form-group row">
+    <div class="col-xs-2">
+        <!-- buscar datos usuario -->
+      <label for="dni">DNI</label>
+      <input type="text" class="form-control" id="dns" name="dns" placeholder="escribe un DNI" maxlength="9" minlength="9" required>
+    </div>
+     <!-- <div class="col-xs-3">
+        <label for="admin">Código administrador</label>
+      <input type="text" class="form-control" name="admin" id="admin" required>
+    </div>  -->
+        <!--   Parámetro oculto exclusivo para reconocer el borrado o búsqueda de datos desde el perfil del usurio al ServletForm-->
+        <!-- <input class="form-input" type="hidden" value="miperfil" placeholder="@Miperfil" id="miperfil"  name="miperfil"> -->
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+<br>
+<br>
+<h2>Borrar perfil</h2>
+  <form action="ServletForm" method="post" class="form-group row">
+    <div class="col-xs-2">
+        <!-- buscar datos usuario -->
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="emaix" name="emaix" placeholder="escribe un email" pattern=".+@gmail\.com" required>
+    </div>
+     <!-- <div class="col-xs-3">
+        <label for="admin">Código administrador</label>
+      <input type="text" class="form-control" name="admin" id="admin" required>
+    </div>  -->
+    <!--   Parámetro oculto exclusivo para reconocer el borrado o búsqueda de datos desde el perfil del usurio al ServletForm-->
+    <!-- <input class="form-input" type="hidden" value="miperfil" placeholder="@Miperfil" id="miperfil"  name="miperfil"> -->
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+ 
+  <a href="bienvenidoAdmin.html"> <button type="submit" class="btn btn-danger"> Volver</button> </a>
+
+
+  <div class="bg-img">
+    <form action="ServletForm" class="container" method="post">
+      <h4><i>Insertar coche</i></h4>
+      
+      <!-- Matrícula -->
+      
+      <!-- <label for="email"><b>Matrícula</b></label> -->
+      <input type="text" placeholder="Matrícula" name="matriculay" pattern="[0-9]{4}[A-Za-z]{3}" id="matriculay" required> 
+  
+      <!-- Marca coche -->
+      <!-- <label for="psw"><b>Marca</b></label> -->
+      <input type="text" placeholder="Marca" name="marcay" id="marcay" required>
+  
+      <!-- Modelo coche -->
+      <!-- <label for="email"><b>Modelo</b></label> -->
+      <input type="text" placeholder="Modelo" name="modeloy" id="chiron" required>
+  
+      <!-- Velocidad Max -->
+      <!-- <label for="psw"><b>Velocidad Máxima</b></label> -->
+      <input type="number" placeholder="Velocidad máxima"  name="velocidadMay" id="velocidadMay" required>
+  
+      <!-- Precio -->
+      <!-- <label for="psw"><b>Precio</b></label> -->
+      <input type="number" placeholder="Precio" name="precioy" id="precioy" required>
+
+
+          <!--   Parámetro oculto exclusivo para reconocer la inserción de coches desde el perfil del administrador al ServletForm-->
+    <!-- <input class="form-input" type="hidden" value="admin" placeholder="@Admin" id="admin"  name="admin"> -->
+  
+      <!-- DNI -->
+      <!-- <label for="dni"><b>DNI</b></label> -->
+      <input type="text" placeholder="DNI" name="dny"  id="dny" minlength="9" maxlength="9" required>
+      
+      <input type="hidden" value="W6065120" name="cyff"> 
+      
+      <input type="hidden" value="W5062014" name="cyfv"> 
+
+      <!-- Número Tarjeta -->
+      <!-- <label for="numtarjeta"><b>Número de tarjeta</b></label> -->
+      <input type="text" name="numTarjetay" id="numTarjetay" placeholder="Número de tarjeta: 16 números"  pattern="\d{16}" required>
+  
+      <!-- CIFF -->
+      <!-- <label for="psw"><b></b></label> -->
+      <!-- <input type="hidden" placeholder="W1404983" name="ciff"> -->
+  
+      <!-- CIFV -->
+      <!-- <label for="psw"><b></b></label> -->
+      <!-- <input type="hidden" placeholder="W0112358" name="cifv"> -->
+  
+      <button type="submit" class="btn">Comprar</button>
+    </form>
+  </div>
+
+
+
+  <style>
+    body, html {
+      height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    .bg-img {
+      /* The image used */
+      /* background-image: url("img_nature.jpg"); */
+    
+      min-height: 380px;
+    
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* position: relative; */
+    }
+    
+    /* Add styles to the form container */
+    .container {
+      position: absolute;
+      bottom: 0;
+      right: 0; 
+      /* left: 0; */
+      margin: 20px;
+      max-width: 20%;
+      max-height: 40%;
+      padding: 16px;
+      background-color: rgb(207, 11, 11);
+    }
+    
+    /* Full-width input fields */
+    input[type=text], input[type=password],input[type=number], input[type=email] {
+      width: 90%;
+      padding: 10px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f6ee0c;
+    }
+    
+    input[type=text]:focus, input[type=password]:focus, input[type=number]:focus, input[type=email]:focus {
+      background-color: rgb(12, 225, 249);
+      outline: none;
+    }
+    
+    /* Set a style for the submit button */
+    .btn {
+      background-color: #03e430;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    
+    .btn:hover {
+      opacity: 2;
+    }
+    </style>
+    
+</body>
+</html>
